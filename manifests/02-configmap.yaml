@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: web-content
+  namespace: sre-practice
+data:
+  index.html: |
+    <!DOCTYPE html>
+    <html>
+    <body style="background-color: #2c3e50; color: white; font-family: sans-serif; text-align: center; padding-top: 50px;">
+        <h1>SRE GitOps Lab Active!</h1>
+        <p>Managed automatically by ArgoCD.</p>
+    </body>
+    </html>

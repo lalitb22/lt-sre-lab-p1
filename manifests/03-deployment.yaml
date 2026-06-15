@@ -23,6 +23,14 @@ spec:
           limits:
             memory: "64Mi"
             cpu: "200m"
+# --- NEW SECTION: INJECTING THE SECRET ---
+        env:
+        - name: PROD_API_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: app-credentials
+              key: api-token
+        # -----------------------------------------            
         ports:
         - containerPort: 80
         volumeMounts:
@@ -32,4 +40,3 @@ spec:
       - name: html-volume
         configMap:
           name: web-content
-
